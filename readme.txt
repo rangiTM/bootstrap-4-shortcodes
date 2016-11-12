@@ -18,7 +18,7 @@ This plugin creates a simple, out of the way button just above the WordPress Tin
 
 **Requires PHP 5.3 or newer**
 
-For questions, support, or to contribute to this plugin, check out [our GitHub project](https://github.com/filipstefansson/bootstrap-3-shortcodes)
+For questions, support, or to contribute to this plugin, check out [our GitHub project](https://github.com/ciromattia/bootstrap-4-shortcodes)
 
 ####Updated for Bootstrap 4.x
 Tested and working in the latest version of Bootstrap!
@@ -60,7 +60,7 @@ Tested and working in the latest version of Bootstrap!
 
 == Installation ==
 1. Download and unzip this plugin
-1. Upload the "bootstrap-3-shortcodes" folder to your site's `/wp-content/plugins/` directory
+1. Upload the "bootstrap-4-shortcodes" folder to your site's `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
 1. Create or edit a page or post and click the "B" button that appears above the editor to see the plugin's documentation!
 

@@ -3,7 +3,7 @@
 # The difference is that this script lives in the plugin's git repo & doesn't require an existing SVN repo.
 
 # main config
-PLUGINSLUG="bootstrap-3-shortcodes"
+PLUGINSLUG="bootstrap-4-shortcodes"
 CURRENTDIR=`pwd`
 MAINFILE="bootstrap-shortcodes.php" # this should be the name of your main php file in the wordpress plugin
 
@@ -12,7 +12,7 @@ GITPATH="$CURRENTDIR/" # this file should be in the base of your git repository
 
 # svn config
 SVNPATH="/tmp/$PLUGINSLUG" # path to a temp SVN repo. No trailing slash required and don't add trunk.
-SVNURL="http://plugins.svn.wordpress.org/bootstrap-3-shortcodes" # Remote SVN repo on wordpress.org, with no trailing slash
+SVNURL="http://plugins.svn.wordpress.org/bootstrap-4-shortcodes" # Remote SVN repo on wordpress.org, with no trailing slash
 SVNUSER="FoolsRun" # your svn username
 
 
