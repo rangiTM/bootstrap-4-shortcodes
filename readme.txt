@@ -1,13 +1,13 @@
 === Bootstrap Shortcodes for WordPress ===
-Contributors: FoolsRun, filipstefansson, nodley
+Contributors: FoolsRun, filipstefansson, nodley, ciromattia
 Tags: bootstrap, shortcode, shortcodes, responsive, grid
 Requires at least: 3.8
-Tested up to: 4.6
-Stable tag: 3.3.10
+Tested up to: 4.6.1
+Stable tag: 4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Implements Bootstrap 3 styles and components in WordPress through shortcodes.
+Implements Bootstrap 4 styles and components in WordPress through shortcodes.
 
 == Description ==
 
@@ -20,7 +20,7 @@ This plugin creates a simple, out of the way button just above the WordPress Tin
 
 For questions, support, or to contribute to this plugin, check out [our GitHub project](https://github.com/filipstefansson/bootstrap-3-shortcodes)
 
-####Updated for Bootstrap 3.3.x
+####Updated for Bootstrap 4.x
 Tested and working in the latest version of Bootstrap!
 
 ###Supported Shortcodes

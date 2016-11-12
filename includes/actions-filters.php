@@ -6,7 +6,7 @@
 
     function php_version_notice() {
         $class = 'notice notice-error';
-        $message = __( '<strong>Bootstrap 3 Shortcodes for WordPress</strong> requires PHP version 5.3 or later. You are running PHP version ' . PHP_VERSION . '. Please upgrade to a supported version of PHP.', 'sample-text-domain' );
+        $message = __( '<strong>Bootstrap 4 Shortcodes for WordPress</strong> requires PHP version 5.3 or later. You are running PHP version ' . PHP_VERSION . '. Please upgrade to a supported version of PHP.', 'sample-text-domain' );
 
         printf( '<div class="%1$s"><p>%2$s</p></div>', $class, $message ); 
     }

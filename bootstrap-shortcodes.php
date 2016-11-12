@@ -1,10 +1,10 @@
 <?php
 /*
-Plugin Name: Bootstrap 3 Shortcodes
-Plugin URI: https://github.com/MWDelaney/bootstrap-shortcodes
-Description: The plugin adds a shortcodes for all Bootstrap 3 elements.
-Version: 3.3.10
-Author: Michael W. Delaney, Filip Stefansson, and Simon Yeldon
+Plugin Name: Bootstrap 4 Shortcodes
+Plugin URI: https://github.com/ciromattia/bootstrap-4-shortcodes
+Description: The plugin adds a shortcodes for all Bootstrap 4 elements.
+Version: 4.0
+Author: Ciro Mattia Gonano, Michael W. Delaney, Filip Stefansson, and Simon Yeldon
 Author URI:
 License: MIT
 */

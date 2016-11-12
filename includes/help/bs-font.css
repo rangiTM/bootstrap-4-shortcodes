@@ -10,7 +10,7 @@
 }
 
 .bs_bootstrap-logo {
-	padding: 0 3px;
+    padding: 0 3px;
 }
 .wp-media-buttons .add_media span.bs_bootstrap-logo:before,
 .mce-i-bootstrap-shortcodes:before {
@@ -31,5 +31,5 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 #wp_fs_bootstrap-shortcodes {
-	font-size: 14px !important;
+    font-size: 14px !important;
 }
