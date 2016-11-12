@@ -98,6 +98,7 @@ License: MIT
 			'button',
 			'button-group',
 			'button-toolbar',
+            'card',
 			'caret',
 			'carousel',
 			'carousel-item',
@@ -143,7 +144,6 @@ License: MIT
 			'tabs',
 			'thumbnail',
 			'tooltip',
-			'well',
 		);
 
 		foreach ( $shortcodes as $shortcode ) {
@@ -708,18 +708,22 @@ License: MIT
 	function bs_column( $atts, $content = null ) {
 
 		$atts = shortcode_atts( array(
+                "xl"          => false,
 				"lg"          => false,
 				"md"          => false,
 				"sm"          => false,
 				"xs"          => false,
+                "offset_xl"   => false,
 				"offset_lg"   => false,
 				"offset_md"   => false,
 				"offset_sm"   => false,
 				"offset_xs"   => false,
-				"pull_lg"     => false,
+				"pull_xl"     => false,
+                "pull_lg"     => false,
 				"pull_md"     => false,
 				"pull_sm"     => false,
 				"pull_xs"     => false,
+                "push_xl"     => false,
 				"push_lg"     => false,
 				"push_md"     => false,
 				"push_sm"     => false,
@@ -729,22 +733,26 @@ License: MIT
 		), $atts );
 
 		$class  = '';
-		$class .= ( $atts['lg'] )			                                ? ' col-lg-' . $atts['lg'] : '';
+        $class .= ( $atts['xl'] )			                                ? ' col-xl-' . $atts['xl'] : '';
+        $class .= ( $atts['lg'] )			                                ? ' col-lg-' . $atts['lg'] : '';
 		$class .= ( $atts['md'] )                                           ? ' col-md-' . $atts['md'] : '';
 		$class .= ( $atts['sm'] )                                           ? ' col-sm-' . $atts['sm'] : '';
 		$class .= ( $atts['xs'] )                                           ? ' col-xs-' . $atts['xs'] : '';
-		$class .= ( $atts['offset_lg'] || $atts['offset_lg'] === "0" )      ? ' col-lg-offset-' . $atts['offset_lg'] : '';
-		$class .= ( $atts['offset_md'] || $atts['offset_md'] === "0" )      ? ' col-md-offset-' . $atts['offset_md'] : '';
-		$class .= ( $atts['offset_sm'] || $atts['offset_sm'] === "0" )      ? ' col-sm-offset-' . $atts['offset_sm'] : '';
-		$class .= ( $atts['offset_xs'] || $atts['offset_xs'] === "0" )      ? ' col-xs-offset-' . $atts['offset_xs'] : '';
-		$class .= ( $atts['pull_lg']   || $atts['pull_lg'] === "0" )        ? ' col-lg-pull-' . $atts['pull_lg'] : '';
-		$class .= ( $atts['pull_md']   || $atts['pull_md'] === "0" )        ? ' col-md-pull-' . $atts['pull_md'] : '';
-		$class .= ( $atts['pull_sm']   || $atts['pull_sm'] === "0" )        ? ' col-sm-pull-' . $atts['pull_sm'] : '';
-		$class .= ( $atts['pull_xs']   || $atts['pull_xs'] === "0" )        ? ' col-xs-pull-' . $atts['pull_xs'] : '';
-		$class .= ( $atts['push_lg']   || $atts['push_lg'] === "0" )        ? ' col-lg-push-' . $atts['push_lg'] : '';
-		$class .= ( $atts['push_md']   || $atts['push_md'] === "0" )        ? ' col-md-push-' . $atts['push_md'] : '';
-		$class .= ( $atts['push_sm']   || $atts['push_sm'] === "0" )        ? ' col-sm-push-' . $atts['push_sm'] : '';
-		$class .= ( $atts['push_xs']   || $atts['push_xs'] === "0" )        ? ' col-xs-push-' . $atts['push_xs'] : '';
+		$class .= ( $atts['offset_xl'] || $atts['offset_xl'] === "0" )      ? ' offset-xl-' . $atts['offset_xl'] : '';
+        $class .= ( $atts['offset_lg'] || $atts['offset_lg'] === "0" )      ? ' offset-lg-' . $atts['offset_lg'] : '';
+		$class .= ( $atts['offset_md'] || $atts['offset_md'] === "0" )      ? ' offset-md-' . $atts['offset_md'] : '';
+		$class .= ( $atts['offset_sm'] || $atts['offset_sm'] === "0" )      ? ' offset-sm-' . $atts['offset_sm'] : '';
+		$class .= ( $atts['offset_xs'] || $atts['offset_xs'] === "0" )      ? ' offset-xs-' . $atts['offset_xs'] : '';
+        $class .= ( $atts['pull_xl']   || $atts['pull_xl'] === "0" )        ? ' pull-xl-' . $atts['pull_xl'] : '';
+		$class .= ( $atts['pull_lg']   || $atts['pull_lg'] === "0" )        ? ' pull-lg-' . $atts['pull_lg'] : '';
+		$class .= ( $atts['pull_md']   || $atts['pull_md'] === "0" )        ? ' pull-md-' . $atts['pull_md'] : '';
+		$class .= ( $atts['pull_sm']   || $atts['pull_sm'] === "0" )        ? ' pull-sm' . $atts['pull_sm'] : '';
+		$class .= ( $atts['pull_xs']   || $atts['pull_xs'] === "0" )        ? ' pull-xs' . $atts['pull_xs'] : '';
+        $class .= ( $atts['push_xl']   || $atts['push_xl'] === "0" )        ? ' push-xl-' . $atts['push_xl'] : '';
+		$class .= ( $atts['push_lg']   || $atts['push_lg'] === "0" )        ? ' push-lg-' . $atts['push_lg'] : '';
+		$class .= ( $atts['push_md']   || $atts['push_md'] === "0" )        ? ' push-md-' . $atts['push_md'] : '';
+		$class .= ( $atts['push_sm']   || $atts['push_sm'] === "0" )        ? ' push-sm-' . $atts['push_sm'] : '';
+		$class .= ( $atts['push_xs']   || $atts['push_xs'] === "0" )        ? ' push-xs-' . $atts['push_xs'] : '';
 		$class .= ( $atts['xclass'] )                                       ? ' ' . $atts['xclass'] : '';
 
 		$data_props = $this->parse_data_attributes( $atts['data'] );
@@ -1102,16 +1110,16 @@ License: MIT
 
 	/*--------------------------------------------------------------------------------------
 		*
-		* bs_well
+		* bs_card
 		*
-		* @author Filip Stefansson
-		* @since 1.0
+		* @author Ciro Mattia Gonano
+		* @since 3.3.11
 		*
 		* Options:
 		*   size: sm = small, lg = large
 		*
 		*-------------------------------------------------------------------------------------*/
-	function bs_well( $atts, $content = null ) {
+	function bs_card( $atts, $content = null ) {
 
 		$atts = shortcode_atts( array(
 				"size"   => false,
@@ -1119,7 +1127,7 @@ License: MIT
 				"data"   => false
 		), $atts );
 
-		$class  = 'well';
+		$class  = 'card';
 		$class .= ( $atts['size'] )     ? ' well-' . $atts['size'] : '';
 		$class .= ( $atts['xclass'] )   ? ' ' . $atts['xclass'] : '';
 
