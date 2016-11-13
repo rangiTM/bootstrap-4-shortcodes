@@ -102,6 +102,7 @@ License: MIT
 			'caret',
 			'carousel',
 			'carousel-item',
+            'carousel-caption',
 			'code',
 			'collapse',
 			'collapsibles',
@@ -1113,7 +1114,7 @@ License: MIT
 		* bs_card
 		*
 		* @author Ciro Mattia Gonano
-		* @since 3.3.11
+		* @since 4.0
 		*
 		* Options:
 		*   size: sm = small, lg = large
@@ -1528,7 +1529,7 @@ License: MIT
 		}
 		$GLOBALS['carousel_default_count']++;
 
-		$class  = 'item';
+		$class  = 'carousel-item';
 		$class .= ( $atts['active']   == 'true' ) ? ' active' : '';
 		$class .= ( $atts['xclass'] ) ? ' ' . $atts['xclass'] : '';
 
@@ -1548,6 +1549,34 @@ License: MIT
 			( $atts['caption'] ) ? '<div class="carousel-caption">' . esc_html( $atts['caption'] ) . '</div>' : ''
 		);
 	}
+
+	/*--------------------------------------------------------------------------------------
+        *
+        * bs_carousel_caption
+        *
+        * @author Ciro Mattia Gonano
+        * @since 4.0
+        *
+        *-------------------------------------------------------------------------------------*/
+    function bs_carousel_caption( $atts, $content = null ) {
+
+        $atts = shortcode_atts( array(
+            "xclass"  => false,
+            "data"    => false
+        ), $atts );
+
+        $class  = 'carousel-caption';
+        $class .= ( $atts['xclass'] )   ? ' ' . $atts['xclass'] : '';
+
+        $data_props = $this->parse_data_attributes( $atts['data'] );
+
+        return sprintf(
+            '<div class="%s"%s>%s</div>',
+            esc_attr( trim($class) ),
+            ( $data_props ) ? ' ' . $data_props : '',
+            do_shortcode( $content )
+        );
+    }
 
 	/*--------------------------------------------------------------------------------------
 		*
