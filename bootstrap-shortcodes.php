@@ -1445,8 +1445,8 @@ License: MIT
 			( $indicators ) ? '<ol class="carousel-indicators">' . implode( $indicators ) . '</ol>' : '',
 			esc_attr( $inner_class ),
 			do_shortcode( $content ),
-			'<a class="left carousel-control"  href="' . esc_url( '#' . $id ) . '" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>',
-			'<a class="right carousel-control" href="' . esc_url( '#' . $id ) . '" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>'
+			'<a class="left carousel-control" href="' . esc_url( '#' . $id ) . '" role="button" data-slide="prev"><span class="icon-prev" aria-hidden="true"></span><span class="sr-only">'._x('Previous','Carousel control arrow').'</span></a>',
+            '<a class="right carousel-control" href="' . esc_url( '#' . $id ) . '" role="button" data-slide="next"><span class="icon-next" aria-hidden="true"></span><span class="sr-only">'._x('Next', 'Carousel control arrow').'</span></a>'
 		);
 	}
 
