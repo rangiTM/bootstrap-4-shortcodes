@@ -24,8 +24,9 @@ For questions, support, or to contribute to this plugin, check out [our GitHub p
 Tested and working in the latest version of Bootstrap!
 
 ###Supported Shortcodes
-####CSS
+####Layout
 * Grid (container, row, columns, fully responsive)
+####Content
 * Lead body copy
 * Emphasis classes
 * Code
@@ -43,14 +44,11 @@ Tested and working in the latest version of Bootstrap!
 * Badges
 * Jumbotron
 * Page Header
-* Thumbnails
 * Alerts
 * Progress Bars
 * Media Objects
 * List Groups
-* Panels
-* Wells
-####JavaScript
+* Cards
 * Tabs
 * Tooltip
 * Popover
@@ -66,11 +64,20 @@ Tested and working in the latest version of Bootstrap!
 
 == Frequently Asked Questions ==
 
-= Does this plugin include Bootstrap 3? =
+= Does this plugin include Bootstrap 4? =
 
 No, we assume you are already working with a WordPress theme that includes the Bootstrap libraries.
 
 == Changelog ==
+
+= 4.0 =
+* Rename to bootstrap-4-shortcodes
+* Added "xl" breakpoint to columns
+* Removed "panel", "well" and "thumbnail" in favor of the new "card" element
+* Shortcode "collapsible" changed to "accordion"
+* Added new shortcode "carousel-caption"
+* Updated carousel to reflect new naming
+* Updated columns to reflect new naming (push/pull/offset)
 
 = 3.3.10 =
 * Tested to work with WordPress 4.6

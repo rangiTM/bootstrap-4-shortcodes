@@ -806,8 +806,8 @@ html | Insert HTML into the tooltip | optional | true, false | false
 		...
 	[/collapse]
 
-#### Set of Collapsibles
-	[collapsibles]
+#### Accordion
+	[accordion]
 		[collapse title="Collapse 1" active="true"]
 			...
 		[/collapse]
@@ -817,9 +817,9 @@ html | Insert HTML into the tooltip | optional | true, false | false
 		[collapse title="Collapse 3"]
 			...
 		[/collapse]
-	[/collapsibles]
+	[/accordion]
 
-#### [collapsibles] parameters
+#### [accordion] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
 xclass | Any extra classes you want to add | optional | any text | none
@@ -828,7 +828,7 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 #### [collapse] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
-title | The title of the collapsible, visible when collapsed | required | any text | false
+title | The title of the collapsible item, visible when collapsed | required | any text | false
 type | The type of the panel | optional | default, primary, success, info, warning, danger, link | default
 active | Whether the tab is expanded at load time | optional | true, false | false
 xclass | Any extra classes you want to add | optional | any text | none

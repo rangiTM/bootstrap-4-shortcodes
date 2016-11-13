@@ -91,7 +91,8 @@ License: MIT
 	function add_shortcodes() {
 
 		$shortcodes = array(
-			'alert',
+            'accordion',
+            'alert',
 			'badge',
 			'breadcrumb',
 			'breadcrumb-item',
@@ -105,7 +106,6 @@ License: MIT
             'carousel-caption',
 			'code',
 			'collapse',
-			'collapsibles',
 			'column',
 			'container',
 			'container-fluid',
@@ -132,7 +132,6 @@ License: MIT
 			'nav',
 			'nav-item',
 			'page-header',
-			'panel',
 			'popover',
 			'progress',
 			'progress-bar',
@@ -143,7 +142,6 @@ License: MIT
 			'table',
 			'table-wrap',
 			'tabs',
-			'thumbnail',
 			'tooltip',
 		);
 
@@ -1144,60 +1142,6 @@ License: MIT
 
 	/*--------------------------------------------------------------------------------------
 		*
-		* bs_panel
-		*
-		* @author M. W. Delaney
-		* @since 1.0
-		*
-		*-------------------------------------------------------------------------------------*/
-	function bs_panel( $atts, $content = null ) {
-
-		$atts = shortcode_atts( array(
-				"title"   => false,
-				"heading" => false,
-				"type"    => false,
-				"footer"  => false,
-				"xclass"  => false,
-				"data"    => false
-		), $atts );
-
-		$class  = 'panel';
-		$class .= ( $atts['type'] )     ? ' panel-' . $atts['type'] : ' panel-default';
-		$class .= ( $atts['xclass'] )   ? ' ' . $atts['xclass'] : '';
-
-		if( ! $atts['heading'] && $atts['title'] ) {
-			$atts['heading'] = $atts['title'];
-			$atts['title'] = true;
-		}
-
-		$data_props = $this->parse_data_attributes( $atts['data'] );
-
-		$footer = ( $atts['footer'] ) ? '<div class="panel-footer">' . $atts['footer'] . '</div>' : '';
-
-		if ( $atts['heading'] ) {
-			$heading = sprintf(
-				'<div class="panel-heading">%s%s%s</div>',
-				( $atts['title'] ) ? '<h3 class="panel-title">' : '',
-				esc_html( $atts['heading'] ),
-				( $atts['title'] ) ? '</h3>' : ''
-			);
-		}
-		else {
-			$heading = '';
-		}
-
-		return sprintf(
-			'<div class="%s"%s>%s<div class="panel-body">%s</div>%s</div>',
-			esc_attr( trim($class) ),
-			( $data_props ) ? ' ' . $data_props : '',
-			$heading,
-			do_shortcode( $content ),
-			( $footer ) ? ' ' . $footer : ''
-		);
-	}
-
-	/*--------------------------------------------------------------------------------------
-		*
 		* bs_tabs
 		*
 		* @author Filip Stefansson
@@ -1338,13 +1282,13 @@ License: MIT
 
 	/*--------------------------------------------------------------------------------------
 		*
-		* bs_collapsibles
+		* bs_accordion
 		*
-		* @author Filip Stefansson
-		* @since 1.0
+		* @author Ciro Mattia Gonano
+		* @since 4.0
 		*
 		*-------------------------------------------------------------------------------------*/
-	function bs_collapsibles( $atts, $content = null ) {
+	function bs_accordion( $atts, $content = null ) {
 
 		if( isset($GLOBALS['collapsibles_count']) )
 			$GLOBALS['collapsibles_count']++;
@@ -1356,7 +1300,7 @@ License: MIT
 				"data"   => false
 		), $atts );
 
-		$class = 'panel-group';
+		$class = '';
 		$class .= ( $atts['xclass'] )   ? ' ' . $atts['xclass'] : '';
 
 		$id = 'custom-collapse-'. $GLOBALS['collapsibles_count'];
@@ -1364,7 +1308,7 @@ License: MIT
 		$data_props = $this->parse_data_attributes( $atts['data'] );
 
 		return sprintf(
-			'<div class="%s" id="%s"%s>%s</div>',
+			'<div class="%s" id="%s" role="tablist" aria-multiselectable="true"%s>%s</div>',
 				esc_attr( trim($class) ),
 				esc_attr($id),
 			( $data_props ) ? ' ' . $data_props : '',
@@ -1397,12 +1341,12 @@ License: MIT
 				"data"    => false
 		), $atts );
 
-		$panel_class = 'panel';
-		$panel_class .= ( $atts['type'] )     ? ' panel-' . $atts['type'] : ' panel-default';
-		$panel_class .= ( $atts['xclass'] )   ? ' ' . $atts['xclass'] : '';
+		$card_class = 'card';
+		$card_class .= ( $atts['type'] )     ? ' card-' . $atts['type'] : ' card-default';
+		$card_class .= ( $atts['xclass'] )   ? ' ' . $atts['xclass'] : '';
 
-		$collapse_class = 'panel-collapse';
-		$collapse_class .= ( $atts['active'] == 'true' )  ? ' in' : ' collapse';
+		$collapse_class = 'collapse';
+		$collapse_class .= ( $atts['active'] == 'true' )  ? ' in' : '';
 
 		$a_class = '';
 		$a_class .= ( $atts['active'] == 'true' )  ? '' : 'collapsed';
@@ -1414,16 +1358,16 @@ License: MIT
 
 		return sprintf(
 			'<div class="%1$s"%2$s>
-				<div class="panel-heading">
-					<h4 class="panel-title">
+				<div class="card-header">
+					<h5>
 						<a class="%3$s" data-toggle="collapse"%4$s href="#%5$s">%6$s</a>
-					</h4>
+					</h5>
 				</div>
 				<div id="%5$s" class="%7$s">
-					<div class="panel-body">%8$s</div>
+					<div class="card-block">%8$s</div>
 				</div>
 			</div>',
-			esc_attr( $panel_class ),
+			esc_attr( $card_class ),
 			( $data_props )   ? ' ' . $data_props : '',
 			$a_class,
 			( $parent )       ? ' data-parent="#' . $parent . '"' : '',
@@ -1895,36 +1839,6 @@ License: MIT
 			( $data_props ) ? ' ' . $data_props : '',
 			$this->scrape_dom_element($tag, $content, $embed_class, '', '')
 		);
-
-	}
-
-	/*--------------------------------------------------------------------------------------
-		*
-		* bs_thumbnail
-		*
-		*
-		*-------------------------------------------------------------------------------------*/
-	function bs_thumbnail( $atts, $content = null ) {
-
-		$atts = shortcode_atts( array(
-				"xclass"  => false,
-				"has_content" => false,
-				"data"    => false
-		), $atts );
-
-		$class  = "thumbnail";
-		$class .= ($atts['xclass']) ? ' ' . $atts['xclass'] : '';
-
-		$return = '';
-		if($atts['has_content']) {
-			$content = '<div>' . $content . '</div>';
-			$tag = array('div');
-		} else {
-				$tag = array('a', 'img');
-		}
-		$content = do_shortcode($content);
-		$return .= $this->scrape_dom_element($tag, $content, $class, '', $atts['data']);
-		return $return;
 
 	}
 
