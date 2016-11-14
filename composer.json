@@ -21,11 +21,16 @@
     },
     {
       "name": "Michael W. Delaney"
+    },
+    {
+      "name": "Ciro Mattia Gonano",
+      "email": "ciromattia@gmail.com",
+      "role": "Developer"
     }
-  ],  
+   ],  
   "type": "wordpress-plugin",
   "require": {
     "php": ">=5.3.2",
-    "composer/installers": "1.0.*@dev"
+    "composer/installers": "~1.0"
   }
 }
