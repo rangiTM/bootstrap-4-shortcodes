@@ -1629,7 +1629,7 @@ License: MIT
 				"data"   => false
 		), $atts );
 
-		$class = "media-object img-responsive";
+		$class = "media-object img-fluid";
 		$class .= ($atts['xclass']) ? ' ' . $atts['xclass'] : '';
 
 		$media_class ='';
