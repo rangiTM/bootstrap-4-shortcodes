@@ -686,7 +686,7 @@ class BoostrapShortcodes {
 			"flex-halign-sm"  => '',
 			"flex-halign-md"  => '',
 			"flex-halign-lg"  => '',
-			"flex-vhalign-xl" => '',
+			"flex-halign-xl" => '',
 			"xclass"          => false,
 			"data"            => false
 		), $atts );
