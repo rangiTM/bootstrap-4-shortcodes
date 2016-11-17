@@ -73,9 +73,11 @@ No, we assume you are already working with a WordPress theme that includes the B
 = 4.0 =
 * Rename to bootstrap-4-shortcodes
 * Added "xl" breakpoint to columns
+* Added "flex-" alignments to rows
 * Removed "panel", "well" and "thumbnail" in favor of the new "card" element
 * Shortcode "collapsible" changed to "accordion"
 * Added new shortcode "carousel-caption"
+* Added new shortcode "media-list"
 * Updated carousel to reflect new naming
 * Updated columns to reflect new naming (push/pull/offset)
 

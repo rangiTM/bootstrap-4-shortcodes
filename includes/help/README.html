@@ -1,54 +1,53 @@
 <h1 id="bootstrap-4-shortcodes-for-wordpress">Bootstrap 4 Shortcodes for WordPress</h1>
 <p><img src="https://img.shields.io/wordpress/plugin/r/bootstrap-4-shortcodes.svg" alt="WordPress Rating"> <img src="https://img.shields.io/wordpress/plugin/dt/bootstrap-4-shortcodes.svg" alt="WordPress Downloads"></p>
 <p>WordPress plugin that provides shortcodes for easier use of the Bootstrap styles and components in your content.</p>
-<p><strong>Bootstrap 3 Shortcodes for WordPress</strong> creates a simple, out of the way button just above the WordPress TinyMCE editor (next to the &quot;Add Media&quot; button) which pops up the plugin&#39;s documentation and shortcode examples for reference and handy &quot;Insert Example&quot; links to send the example shortcodes straight to the editor. There are no additional TinyMCE buttons to clutter up your screen, just great, easy to use shortcodes!</p>
+<p><strong>Bootstrap 4 Shortcodes for WordPress</strong> creates a simple, out of the way button just above the WordPress TinyMCE editor (next to the &quot;Add Media&quot; button) which pops up the plugin&#39;s documentation and shortcode examples for reference and handy &quot;Insert Example&quot; links to send the example shortcodes straight to the editor. There are no additional TinyMCE buttons to clutter up your screen, just great, easy to use shortcodes!</p>
 <h2 id="requirements">Requirements</h2>
 <p><img src="https://img.shields.io/wordpress/v/bootstrap-4-shortcodes.svg" alt="Tested in WordPress"> <img src="https://img.shields.io/badge/PHP-5.3%2B-blue.svg" alt="PHP 5.3+"> <img src="https://img.shields.io/badge/Bootstrap-4.x-6f5499.svg" alt="Bootstrap"></p>
-<p>This plugin won&#39;t do anything if you don&#39;t have WordPress theme built with the <a href="http://getbootstrap.com/">Bootstrap</a> framework. <strong>This plugin does not include the Bootstrap framework</strong>.</p>
+<p>This plugin won&#39;t do anything if you don&#39;t have WordPress theme built with the <a href="http://v4-alpha.getbootstrap.com/">Bootstrap</a> framework. <strong>This plugin does not include the Bootstrap framework</strong>.</p>
 <p>The plugin is tested to work with <code>Bootstrap 4</code> and <code>WordPress 4.6.1</code> and <strong>requires PHP 5.3 or later</strong>.</p>
 <h2 id="shortcode-reference">Shortcode Reference</h2>
 <h3 id="css">CSS</h3>
 <ul>
 <li><a href="#grid">Grid</a></li>
-<li><a href="#lead-body-copy">Lead body copy</a></li>
+<li><a href="#media-objects">Media Objects</a></li>
+<li><a href="#responsive-utilities">Responsive utilities</a></li>
+</ul>
+<h3 id="content">Content</h3>
+<ul>
+<li><a href="#lead">Lead</a></li>
 <li><a href="#emphasis-classes">Emphasis classes</a></li>
 <li><a href="#code">Code</a></li>
-<li><a href="#tables">Tables</a></li>
-<li><a href="#buttons">Buttons</a></li>
 <li><a href="#images">Images</a></li>
-<li><a href="#responsive-embeds">Responsive Embeds</a></li>
-<li><a href="#responsive-utilities">Responsive utilities</a></li>
+<li><a href="#tables">Tables</a></li>
+<li><a href="#figures">Figures</a></li>
 </ul>
 <h3 id="components">Components</h3>
 <ul>
-<li><a href="#icons">Icons</a></li>
-<li><a href="#button-groups">Button Groups</a></li>
-<li><a href="#button-dropdowns">Button Dropdowns</a></li>
-<li><a href="#navs">Navs</a></li>
-<li><a href="#breadcrumbs">Breadcrumbs</a></li>
-<li><a href="#labels">Labels</a></li>
-<li><a href="#badges">Badges</a></li>
-<li><a href="#jumbotron">Jumbotron</a></li>
-<li><a href="#page-header">Page Header</a></li>
-<li><a href="#thumbnails">Thumbnails</a></li>
 <li><a href="#alerts">Alerts</a></li>
-<li><a href="#progress-bars">Progress Bars</a></li>
-<li><a href="#media-objects">Media Objects</a></li>
-<li><a href="#list-groups">List Groups</a></li>
-<li><a href="#panels">Panels</a></li>
-<li><a href="#wells">Wells</a></li>
-</ul>
-<h3 id="javascript">JavaScript</h3>
-<ul>
-<li><a href="#tabs">Tabs</a></li>
-<li><a href="#tooltip">Tooltip</a></li>
-<li><a href="#popover">Popover</a></li>
-<li><a href="#collapse">Collapse</a></li>
+<li><a href="#breadcrumbs">Breadcrumbs</a></li>
+<li><a href="#buttons">Buttons</a></li>
+<li><a href="#button-groups">Button Groups</a></li>
+<li><a href="#cards">Cards</a></li>
 <li><a href="#carousel">Carousel</a></li>
+<li><a href="#collapse">Collapse</a></li>
+<li><a href="#dropdowns">Dropdowns</a></li>
+<li><a href="#jumbotron">Jumbotron</a></li>
+<li><a href="#list-groups">List Groups</a></li>
 <li><a href="#modal">Modal</a></li>
+<li><a href="#navs">Navs</a></li>
+<li><a href="#popover">Popover</a></li>
+<li><a href="#progress">Progress</a></li>
+<li><a href="#tag">Tag</a></li>
+<li><a href="#tooltip">Tooltip</a></li>
+</ul>
+<h3 id="utilities">Utilities</h3>
+<ul>
+<li><a href="#close-icon">Close Icon</a></li>
+<li><a href="#responsive-embeds">Responsive Embeds</a></li>
 </ul>
 <h1 id="usage">Usage</h1>
-<h3 id="css">CSS</h3>
+<h3 id="layout">Layout</h3>
 <h3 id="grid">Grid</h3>
 <pre><code>[row]
     [column md=&quot;6&quot;]
@@ -82,7 +81,8 @@
         [/row]
     [/container]
 [/container-fluid]
-</code></pre><h4 id="-container-parameters">[container] parameters</h4>
+</code></pre><p>If your Bootstrap has flexbox support enabled, you can get some more alignment options on rows and columns - <a href="http://v4-alpha.getbootstrap.com/layout/flexbox-grid/">Bootstrap flexbox documentation</a>.</p>
+<h4 id="-container-parameters">[container] parameters</h4>
 <table>
 <thead>
 <tr>
@@ -158,6 +158,76 @@
 </thead>
 <tbody>
 <tr>
+<td>flex-valign-xs</td>
+<td>(only if flexbox is enabled) Vertical aligment for columns on extra small screens (less than 576px)</td>
+<td>optional</td>
+<td>top,middle,bottom</td>
+<td>none</td>
+</tr>
+<tr>
+<td>flex-valign-sm</td>
+<td>(only if flexbox is enabled) Vertical aligment for columns on small screens (greater than 576px)</td>
+<td>optional</td>
+<td>top,middle,bottom</td>
+<td>none</td>
+</tr>
+<tr>
+<td>flex-valign-md</td>
+<td>(only if flexbox is enabled) Vertical aligment for columns on medium screens (greater than 768px)</td>
+<td>optional</td>
+<td>top,middle,bottom</td>
+<td>none</td>
+</tr>
+<tr>
+<td>flex-valign-lg</td>
+<td>(only if flexbox is enabled) Vertical aligment for columns on large screens (greater than 992px)</td>
+<td>optional</td>
+<td>top,middle,bottom</td>
+<td>none</td>
+</tr>
+<tr>
+<td>flex-valign-xs</td>
+<td>(only if flexbox is enabled) Vertical aligment for columns on extra large screens (greater than 1200px)</td>
+<td>optional</td>
+<td>top,middle,bottom</td>
+<td>none</td>
+</tr>
+<tr>
+<td>flex-halign-xs</td>
+<td>(only if flexbox is enabled) Horizontal aligment for columns on extra small screens (less than 576px)</td>
+<td>optional</td>
+<td>left,center,right,around,between</td>
+<td>none</td>
+</tr>
+<tr>
+<td>flex-halign-sm</td>
+<td>(only if flexbox is enabled) Horizontal aligment for columns on small screens (greater than 576px)</td>
+<td>optional</td>
+<td>left,center,right,around,between</td>
+<td>none</td>
+</tr>
+<tr>
+<td>flex-halign-md</td>
+<td>(only if flexbox is enabled) Horizontal aligment for columns on medium screens (greater than 768px)</td>
+<td>optional</td>
+<td>left,center,right,around,between</td>
+<td>none</td>
+</tr>
+<tr>
+<td>flex-halign-lg</td>
+<td>(only if flexbox is enabled) Horizontal aligment for columns on large screens (greater than 992px)</td>
+<td>optional</td>
+<td>left,center,right,around,between</td>
+<td>none</td>
+</tr>
+<tr>
+<td>flex-halign-xs</td>
+<td>(only if flexbox is enabled) Horizontal aligment for columns on extra large screens (greater than 1200px)</td>
+<td>optional</td>
+<td>left,center,right,around,between</td>
+<td>none</td>
+</tr>
+<tr>
 <td>xclass</td>
 <td>Any extra classes you want to add</td>
 <td>optional</td>
@@ -187,28 +257,35 @@
 <tbody>
 <tr>
 <td>xs</td>
-<td>Size of column on extra small screens (less than 768px)</td>
+<td>Size of column on extra small screens (less than 576px)</td>
 <td>optional</td>
 <td>1-12</td>
 <td>false</td>
 </tr>
 <tr>
 <td>sm</td>
-<td>Size of column on small screens (greater than 768px)</td>
+<td>Size of column on small screens (greater than 576px)</td>
 <td>optional</td>
 <td>1-12</td>
 <td>false</td>
 </tr>
 <tr>
 <td>md</td>
-<td>Size of column on medium screens (greater than 992px)</td>
+<td>Size of column on medium screens (greater than 768px)</td>
 <td>optional</td>
 <td>1-12</td>
 <td>false</td>
 </tr>
 <tr>
 <td>lg</td>
-<td>Size of column on large screens (greater than 1200px)</td>
+<td>Size of column on large screens (greater than 992px)</td>
+<td>optional</td>
+<td>1-12</td>
+<td>false</td>
+</tr>
+<tr>
+<td>xl</td>
+<td>Size of column on extra large screens (greater than 1200px)</td>
 <td>optional</td>
 <td>1-12</td>
 <td>false</td>
@@ -242,6 +319,13 @@
 <td>false</td>
 </tr>
 <tr>
+<td>offset_xl</td>
+<td>Offset on column on extra large screens</td>
+<td>optional</td>
+<td>1-12</td>
+<td>false</td>
+</tr>
+<tr>
 <td>pull_xs</td>
 <td>Pull on extra small screens</td>
 <td>optional</td>
@@ -265,6 +349,13 @@
 <tr>
 <td>pull_lg</td>
 <td>Pull on column on large screens</td>
+<td>optional</td>
+<td>1-12</td>
+<td>false</td>
+</tr>
+<tr>
+<td>pull_xl</td>
+<td>Pull on column on extra large screens</td>
 <td>optional</td>
 <td>1-12</td>
 <td>false</td>
@@ -298,6 +389,13 @@
 <td>false</td>
 </tr>
 <tr>
+<td>push_xl</td>
+<td>Push on column on extra large screens</td>
+<td>optional</td>
+<td>1-12</td>
+<td>false</td>
+</tr>
+<tr>
 <td>xclass</td>
 <td>Any extra classes you want to add</td>
 <td>optional</td>
@@ -313,9 +411,225 @@
 </tr>
 </tbody>
 </table>
-<p><a href="http://getbootstrap.com/css/#grid">Bootstrap grid documentation</a>.</p>
+<p><a href="http://v4-alpha.getbootstrap.com/layout/grid/">Bootstrap grid documentation</a>.</p>
 <hr>
-<h3 id="lead-body-copy">Lead body copy</h3>
+<h3 id="media-objects">Media Objects</h3>
+<pre><code>[media-list]
+    [media]
+        [media-object media=&quot;left&quot;]
+            ...
+        [/media-object]
+        [media-body title=&quot;Testing&quot;]
+            ...
+        [/media-body]
+    [/media]
+[/media-list]
+</code></pre><p>media-list is entirely optional and should contain only media elements.</p>
+<h4 id="-media-list-parameters">[media-list] parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+<th>Values</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xclass</td>
+<td>Any extra classes you want to add</td>
+<td>optional</td>
+<td>any text</td>
+<td>none</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>).</td>
+<td>optional</td>
+<td>any text</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-media-parameters">[media] parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+<th>Values</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xclass</td>
+<td>Any extra classes you want to add</td>
+<td>optional</td>
+<td>any text</td>
+<td>none</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>).</td>
+<td>optional</td>
+<td>any text</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-media-object-parameters">[media-object] parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+<th>Values</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>halign</td>
+<td>Whether the image pulls to the left or right</td>
+<td>optional</td>
+<td>left, right</td>
+<td>left</td>
+</tr>
+<tr>
+<td>valign</td>
+<td>Whether the body is vertically aligned to top, middle or bottom</td>
+<td>optional</td>
+<td>top, middle, bottom</td>
+<td>top</td>
+</tr>
+<tr>
+<td>xclass</td>
+<td>Any extra classes you want to add</td>
+<td>optional</td>
+<td>any text</td>
+<td>none</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>).</td>
+<td>optional</td>
+<td>any text</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-media-body-parameters">[media-body] parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+<th>Values</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td>The object title</td>
+<td>required</td>
+<td>Any text</td>
+<td>none</td>
+</tr>
+<tr>
+<td>xclass</td>
+<td>Any extra classes you want to add</td>
+<td>optional</td>
+<td>any text</td>
+<td>none</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>).</td>
+<td>optional</td>
+<td>any text</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p><strong>NOTE: media-object should contain an image, or linked image, inserted using the WordPress TinyMCE editor</strong></p>
+<p><a href="http://v4-alpha.getbootstrap.com/layout/media-object/">Bootstrap media objects documentation</a></p>
+<hr>
+<h3 id="responsive-utilities">Responsive Utilities</h3>
+<pre><code>[responsive block=&quot;lg md&quot; hidden=&quot;sm xs&quot;] ... [/responsive]
+</code></pre><h4 id="-reponsive-parameters">[reponsive] parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+<th>Values</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>visible</td>
+<td>Sizes at which this element is visible (separated by spaces) <strong>NOTE: as of Bootstrap 3.2 &quot;visible&quot; is deprecated in favor of &quot;block&quot;, &quot;inline&quot;, and &quot;inline-block&quot; (see below)</strong></td>
+<td>optional</td>
+<td>xs, sm, md, lg</td>
+<td>false</td>
+</tr>
+<tr>
+<td>hidden</td>
+<td>Sizes at which this element is hidden (separated by spaces)</td>
+<td>optional</td>
+<td>xs, sm, md, lg</td>
+<td>false</td>
+</tr>
+<tr>
+<td>block</td>
+<td>Sizes at which this element is visible and displayed as a &quot;block&quot; element (separated by spaces)</td>
+<td>optional</td>
+<td>xs, sm, md, lg</td>
+<td>false</td>
+</tr>
+<tr>
+<td>inline</td>
+<td>Sizes at which this element is visible and displayed as an &quot;inline&quot; element (separated by spaces)</td>
+<td>optional</td>
+<td>xs, sm, md, lg</td>
+<td>false</td>
+</tr>
+<tr>
+<td>inline_block</td>
+<td>Sizes at which this element is visible and displayed as an &quot;inline-block&quot; element (separated by spaces)</td>
+<td>optional</td>
+<td>xs, sm, md, lg</td>
+<td>false</td>
+</tr>
+<tr>
+<td>xclass</td>
+<td>Any extra classes you want to add</td>
+<td>optional</td>
+<td>any text</td>
+<td>none</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>).</td>
+<td>optional</td>
+<td>any text</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p><a href="http://v4-alpha.getbootstrap.com/layout/responsive-utilities/">Bootstrap responsive utilities documentation</a></p>
+<hr>
+<h3 id="components">Components</h3>
+<h3 id="lead">Lead</h3>
 <pre><code>[lead] ... [/lead]
 </code></pre><h4 id="-lead-parameters">[lead] parameters</h4>
 <table>
@@ -345,7 +659,7 @@
 </tr>
 </tbody>
 </table>
-<p><a href="http://getbootstrap.com/css/#type-body-copy">Bootstrap body copy documentation</a></p>
+<p><a href="http://v4-alpha.getbootstrap.com/content/typography/#lead">Bootstrap lead documentation</a></p>
 <hr>
 <h3 id="emphasis-classes">Emphasis classes</h3>
 <pre><code>[emphasis type=&quot;success&quot;] ... [/emphasis]
@@ -384,7 +698,7 @@
 </tr>
 </tbody>
 </table>
-<p><a href="http://getbootstrap.com/css/#type-emphasis">Bootstrap emphasis classes documentation</a></p>
+<p><a href="http://v4-alpha.getbootstrap.com/content/typography/">Bootstrap emphasis classes documentation</a></p>
 <hr>
 <h3 id="code">Code</h3>
 <pre><code>[code] ... [/code]
@@ -430,7 +744,54 @@
 </tr>
 </tbody>
 </table>
-<p><a href="http://getbootstrap.com/css/#code">Bootstrap code documentation</a></p>
+<p><a href="http://v4-alpha.getbootstrap.com/content/code/">Bootstrap code documentation</a></p>
+<hr>
+<h3 id="images">Images</h3>
+<pre><code>[img type=&quot;circle&quot; fluid=&quot;true&quot;] ... [/img]
+</code></pre><p>Wrap any number of HTML image tags or images inserted via the WordPress media manager.</p>
+<h4 id="-img-parameters">[img] parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+<th>Values</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td>The effect to apply to wrapped images</td>
+<td>optional</td>
+<td>rounded, circle, thumbnail</td>
+<td>false</td>
+</tr>
+<tr>
+<td>fluid</td>
+<td>Make the wrapped images responsive</td>
+<td>optional</td>
+<td>true, false</td>
+<td>false</td>
+</tr>
+<tr>
+<td>xclass</td>
+<td>Any extra classes you want to add</td>
+<td>optional</td>
+<td>any text</td>
+<td>none</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>).</td>
+<td>optional</td>
+<td>any text</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p><a href="http://v4-alpha.getbootstrap.com/css/#images">Bootstrap images documentation</a></p>
 <hr>
 <h3 id="tables">Tables</h3>
 <pre><code>[table-wrap bordered=&quot;true&quot; striped=&quot;true&quot;]
@@ -501,7 +862,7 @@
 </tr>
 </tbody>
 </table>
-<p><a href="http://getbootstrap.com/css/#tables">Bootstrap table documentation</a></p>
+<p><a href="http://v4-alpha.getbootstrap.com/css/#tables">Bootstrap table documentation</a></p>
 <hr>
 <h3 id="buttons">Buttons</h3>
 <pre><code>[button type=&quot;success&quot; size=&quot;lg&quot; link=&quot;#&quot;] ... [/button]
@@ -589,54 +950,7 @@
 </tr>
 </tbody>
 </table>
-<p><a href="http://getbootstrap.com/css/#buttons">Bootstrap button documentation</a></p>
-<hr>
-<h3 id="images">Images</h3>
-<pre><code>[img type=&quot;circle&quot; responsive=&quot;true&quot;] ... [/img]
-</code></pre><p>Wrap any number of HTML image tags or images inserted via the WordPress media manager.</p>
-<h4 id="-img-parameters">[img] parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-<th>Required</th>
-<th>Values</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>type</td>
-<td>The effect to apply to wrapped images</td>
-<td>optional</td>
-<td>rounded, circle, thumbnail</td>
-<td>false</td>
-</tr>
-<tr>
-<td>responsive</td>
-<td>Make the wrapped images responsive</td>
-<td>optional</td>
-<td>true, false</td>
-<td>false</td>
-</tr>
-<tr>
-<td>xclass</td>
-<td>Any extra classes you want to add</td>
-<td>optional</td>
-<td>any text</td>
-<td>none</td>
-</tr>
-<tr>
-<td>data</td>
-<td>Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>).</td>
-<td>optional</td>
-<td>any text</td>
-<td>none</td>
-</tr>
-</tbody>
-</table>
-<p><a href="http://getbootstrap.com/css/#images">Bootstrap images documentation</a></p>
+<p><a href="http://v4-alpha.getbootstrap.com/css/#buttons">Bootstrap button documentation</a></p>
 <hr>
 <h3 id="responsive-embeds">Responsive Embeds</h3>
 <pre><code>[embed-responsive ratio=&quot;16by9&quot;] ... [/embed-responsive]
@@ -676,74 +990,7 @@
 </tr>
 </tbody>
 </table>
-<p><a href="http://getbootstrap.com/components/#responsive-embed">Bootstrap responsive embed documentation</a></p>
-<hr>
-<h3 id="responsive-utilities">Responsive Utilities</h3>
-<pre><code>[responsive block=&quot;lg md&quot; hidden=&quot;sn xs&quot;] ... [/responsive]
-</code></pre><h4 id="-reponsive-parameters">[reponsive] parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-<th>Required</th>
-<th>Values</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>visible</td>
-<td>Sizes at which this element is visible (separated by spaces) <strong>NOTE: as of Bootstrap 3.2 &quot;visible&quot; is deprecated in favor of &quot;block&quot;, &quot;inline&quot;, and &quot;inline-block&quot; (see below)</strong></td>
-<td>optional</td>
-<td>xs, sm, md, lg</td>
-<td>false</td>
-</tr>
-<tr>
-<td>hidden</td>
-<td>Sizes at which this element is hidden (separated by spaces)</td>
-<td>optional</td>
-<td>xs, sm, md, lg</td>
-<td>false</td>
-</tr>
-<tr>
-<td>block</td>
-<td>Sizes at which this element is visible and displayed as a &quot;block&quot; element (separated by spaces)</td>
-<td>optional</td>
-<td>xs, sm, md, lg</td>
-<td>false</td>
-</tr>
-<tr>
-<td>inline</td>
-<td>Sizes at which this element is visible and displayed as an &quot;inline&quot; element (separated by spaces)</td>
-<td>optional</td>
-<td>xs, sm, md, lg</td>
-<td>false</td>
-</tr>
-<tr>
-<td>inline_block</td>
-<td>Sizes at which this element is visible and displayed as an &quot;inline-block&quot; element (separated by spaces)</td>
-<td>optional</td>
-<td>xs, sm, md, lg</td>
-<td>false</td>
-</tr>
-<tr>
-<td>xclass</td>
-<td>Any extra classes you want to add</td>
-<td>optional</td>
-<td>any text</td>
-<td>none</td>
-</tr>
-<tr>
-<td>data</td>
-<td>Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>).</td>
-<td>optional</td>
-<td>any text</td>
-<td>none</td>
-</tr>
-</tbody>
-</table>
-<p><a href="http://getbootstrap.com/css/#responsive-utilities">Bootstrap responsive utilities documentation</a></p>
+<p><a href="http://v4-alpha.getbootstrap.com/components/#responsive-embed">Bootstrap responsive embed documentation</a></p>
 <hr>
 <h3 id="components">Components</h3>
 <h3 id="icons">Icons</h3>
@@ -783,7 +1030,7 @@
 </tr>
 </tbody>
 </table>
-<p><a href="http://getbootstrap.com/components/#glyphicons">Bootstrap Glyphicons documentation</a></p>
+<p><a href="http://v4-alpha.getbootstrap.com/components/#glyphicons">Bootstrap Glyphicons documentation</a></p>
 <hr>
 <h3 id="button-groups">Button Groups</h3>
 <h4 id="basic-example">Basic example</h4>
@@ -892,7 +1139,7 @@
 </tr>
 </tbody>
 </table>
-<p><a href="http://getbootstrap.com/css/#btn-groups">Bootstrap button groups documentation</a></p>
+<p><a href="http://v4-alpha.getbootstrap.com/css/#btn-groups">Bootstrap button groups documentation</a></p>
 <hr>
 <h3 id="button-dropdowns">Button Dropdowns</h3>
 <p>Button Dropdowns can be accomplished by combining the [button-group] shortcode, the &quot;data&quot; parameters of the [button] shortcode, and [dropdown] shortcode as follows.</p>
@@ -1082,7 +1329,7 @@
 </tr>
 </tbody>
 </table>
-<p><a href="http://getbootstrap.com/components/#btn-dropdowns">Bootstrap button dropdowns documentation</a></p>
+<p><a href="http://v4-alpha.getbootstrap.com/components/#btn-dropdowns">Bootstrap button dropdowns documentation</a></p>
 <hr>
 <h3 id="navs">Navs</h3>
 <pre><code>[nav type=&quot;pills&quot;]
@@ -1198,7 +1445,7 @@
 </tr>
 </tbody>
 </table>
-<p><a href="http://getbootstrap.com/components/#nav">Bootstrap button navs documentation</a></p>
+<p><a href="http://v4-alpha.getbootstrap.com/components/#nav">Bootstrap button navs documentation</a></p>
 <hr>
 <h3 id="breadcrumbs">Breadcrumbs</h3>
 <pre><code>[breadcrumb]
@@ -1269,7 +1516,7 @@
 </tr>
 </tbody>
 </table>
-<p><a href="http://getbootstrap.com/components/#breadcrumbs">Bootstrap breadcrumbs documentation</a></p>
+<p><a href="http://v4-alpha.getbootstrap.com/components/#breadcrumbs">Bootstrap breadcrumbs documentation</a></p>
 <hr>
 <h3 id="labels">Labels</h3>
 <pre><code>[label type=&quot;success&quot;] ... [/label]
@@ -1308,7 +1555,7 @@
 </tr>
 </tbody>
 </table>
-<p><a href="http://getbootstrap.com/components/#labels">Bootstrap label documentation</a></p>
+<p><a href="http://v4-alpha.getbootstrap.com/components/#labels">Bootstrap label documentation</a></p>
 <hr>
 <h3 id="badges">Badges</h3>
 <pre><code>[badge right=&quot;true&quot;] ... [/badge]
@@ -1347,7 +1594,7 @@
 </tr>
 </tbody>
 </table>
-<p><a href="http://getbootstrap.com/components/#badges">Bootstrap badges documentation</a></p>
+<p><a href="http://v4-alpha.getbootstrap.com/components/#badges">Bootstrap badges documentation</a></p>
 <hr>
 <h3 id="jumbotron">Jumbotron</h3>
 <pre><code>[jumbotron title=&quot;My Jumbotron&quot;] ... [/jumbotron]
@@ -1386,7 +1633,7 @@
 </tr>
 </tbody>
 </table>
-<p><a href="http://getbootstrap.com/components/#jumbotron">Bootstrap jumbotron documentation</a></p>
+<p><a href="http://v4-alpha.getbootstrap.com/components/#jumbotron">Bootstrap jumbotron documentation</a></p>
 <hr>
 <h3 id="page-header">Page Header</h3>
 <pre><code>[page-header] ... [/page-header]
@@ -1419,48 +1666,7 @@
 </tr>
 </tbody>
 </table>
-<p><a href="http://getbootstrap.com/components/#page-header">Bootstrap page-header documentation</a></p>
-<hr>
-<h3 id="thumbnails">Thumbnails</h3>
-<pre><code>[thumbnail] ... [/thumbnail]
-[thumbnail] ... [/thumbnail]
-[thumbnail] ... [/thumbnail]
-</code></pre><h4 id="-thumbnail-parameters">[thumbnail] parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-<th>Required</th>
-<th>Values</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>has_content</td>
-<td>Set to &quot;true&quot; if this thumbnail contains more than just an image or linked image as in <a href="http://getbootstrap.com/components/#thumbnails-custom-content">Bootstrap&#39;s thumbnail documentation</a>.</td>
-<td>optional</td>
-<td>true, false</td>
-<td>false</td>
-</tr>
-<tr>
-<td>xclass</td>
-<td>Any extra classes you want to add</td>
-<td>optional</td>
-<td>any text</td>
-<td>none</td>
-</tr>
-<tr>
-<td>data</td>
-<td>Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>).</td>
-<td>optional</td>
-<td>any text</td>
-<td>none</td>
-</tr>
-</tbody>
-</table>
-<p><a href="http://getbootstrap.com/components/#thumbnails">Bootstrap thumbnails documentation</a></p>
+<p><a href="http://v4-alpha.getbootstrap.com/components/#page-header">Bootstrap page-header documentation</a></p>
 <hr>
 <h3 id="alerts">Alerts</h3>
 <pre><code>[alert type=&quot;success&quot;] ... [/alert]
@@ -1506,7 +1712,7 @@
 </tr>
 </tbody>
 </table>
-<p><a href="http://getbootstrap.com/components/#alerts">Bootstrap alert documentation</a></p>
+<p><a href="http://v4-alpha.getbootstrap.com/components/#alerts">Bootstrap alert documentation</a></p>
 <hr>
 <h3 id="progress-bars">Progress Bars</h3>
 <pre><code>[progress striped=&quot;true&quot;]
@@ -1604,124 +1810,7 @@
 </tr>
 </tbody>
 </table>
-<p><a href="http://getbootstrap.com/components/#progress">Bootstrap progress bars documentation</a></p>
-<hr>
-<h3 id="media-objects">Media Objects</h3>
-<pre><code>[media]
-    [media-object media=&quot;left&quot;]
-        ...
-    [/media-object]
-    [media-body title=&quot;Testing&quot;]
-        ...
-    [/media-body]
-[/media]
-</code></pre><h4 id="-media-parameters">[media] parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-<th>Required</th>
-<th>Values</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>xclass</td>
-<td>Any extra classes you want to add</td>
-<td>optional</td>
-<td>any text</td>
-<td>none</td>
-</tr>
-<tr>
-<td>data</td>
-<td>Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>).</td>
-<td>optional</td>
-<td>any text</td>
-<td>none</td>
-</tr>
-</tbody>
-</table>
-<h4 id="-media-object-parameters">[media-object] parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-<th>Required</th>
-<th>Values</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>media</td>
-<td>Whether the image pulls to the left or right</td>
-<td>optional</td>
-<td>left, right</td>
-<td>right</td>
-</tr>
-<tr>
-<td>pull</td>
-<td>Whether the image pulls to the left or right <em>Deprecated, use only if your theme uses Bootstrap 3.2 or earlier</em></td>
-<td>optional</td>
-<td>left, right</td>
-<td>right</td>
-</tr>
-<tr>
-<td>xclass</td>
-<td>Any extra classes you want to add</td>
-<td>optional</td>
-<td>any text</td>
-<td>none</td>
-</tr>
-<tr>
-<td>data</td>
-<td>Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>).</td>
-<td>optional</td>
-<td>any text</td>
-<td>none</td>
-</tr>
-</tbody>
-</table>
-<h4 id="-media-body-parameters">[media-body] parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-<th>Required</th>
-<th>Values</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>title</td>
-<td>The object title</td>
-<td>required</td>
-<td>Any text</td>
-<td>none</td>
-</tr>
-<tr>
-<td>xclass</td>
-<td>Any extra classes you want to add</td>
-<td>optional</td>
-<td>any text</td>
-<td>none</td>
-</tr>
-<tr>
-<td>data</td>
-<td>Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>).</td>
-<td>optional</td>
-<td>any text</td>
-<td>none</td>
-</tr>
-</tbody>
-</table>
-<p><strong>NOTE: media-object should contain an image, or linked image, inserted using the WordPress TinyMCE editor</strong></p>
-<p><a href="http://getbootstrap.com/components/#media">Bootstrap media objects documentation</a></p>
+<p><a href="http://v4-alpha.getbootstrap.com/components/#progress">Bootstrap progress bars documentation</a></p>
 <hr>
 <h3 id="list-groups">List Groups</h3>
 <h4 id="basic-example">Basic Example</h4>
@@ -1910,11 +1999,11 @@
 </tr>
 </tbody>
 </table>
-<p><a href="http://getbootstrap.com/components/#list-group">Bootstrap list groups documentation</a></p>
+<p><a href="http://v4-alpha.getbootstrap.com/components/#list-group">Bootstrap list groups documentation</a></p>
 <hr>
-<h3 id="panels">Panels</h3>
-<pre><code>[panel type=&quot;info&quot; heading=&quot;Panel Title&quot; footer=&quot;Footer text&quot;] ... [/panel]
-</code></pre><h4 id="-panel-parameters">[panel] parameters</h4>
+<h3 id="cards">Cards</h3>
+<pre><code>[card type=&quot;info&quot; heading=&quot;Card Title&quot; footer=&quot;Footer text&quot;] ... [/card]
+</code></pre><h4 id="-card-parameters">[card] parameters</h4>
 <table>
 <thead>
 <tr>
@@ -1928,28 +2017,28 @@
 <tbody>
 <tr>
 <td>type</td>
-<td>The type of the panel</td>
+<td>The type of the card</td>
 <td>optional</td>
 <td>default, primary, success, info, warning, danger, link</td>
 <td>default</td>
 </tr>
 <tr>
 <td>heading</td>
-<td>The panel heading</td>
+<td>The card heading</td>
 <td>optional</td>
 <td>any text</td>
 <td>none</td>
 </tr>
 <tr>
 <td>title</td>
-<td>Whether the panel heading should have a title tag around it</td>
+<td>Whether the card heading should have a title tag around it</td>
 <td>optional</td>
 <td>true, false</td>
 <td>false</td>
 </tr>
 <tr>
 <td>footer</td>
-<td>The panel footer text if desired</td>
+<td>The card footer text if desired</td>
 <td>optional</td>
 <td>any text</td>
 <td>none</td>
@@ -1970,46 +2059,7 @@
 </tr>
 </tbody>
 </table>
-<p><a href="http://getbootstrap.com/components/#panels">Bootstrap panels documentation</a></p>
-<hr>
-<h3 id="wells">Wells</h3>
-<pre><code>[well size=&quot;sm&quot;] ... [/well]
-</code></pre><h4 id="-well-parameters">[well] parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-<th>Required</th>
-<th>Values</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>size</td>
-<td>Modifies the amount of padding inside the well</td>
-<td>optional</td>
-<td>sm, lg</td>
-<td>normal</td>
-</tr>
-<tr>
-<td>xclass</td>
-<td>Any extra classes you want to add</td>
-<td>optional</td>
-<td>any text</td>
-<td>none</td>
-</tr>
-<tr>
-<td>data</td>
-<td>Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>).</td>
-<td>optional</td>
-<td>any text</td>
-<td>none</td>
-</tr>
-</tbody>
-</table>
-<p><a href="http://getbootstrap.com/components/#wells">Bootstrap wells documentation</a></p>
+<p><a href="http://v4-alpha.getbootstrap.com/components/#card">Bootstrap card documentation</a></p>
 <hr>
 <h3 id="javascript">Javascript</h3>
 <h3 id="tabs">Tabs</h3>
@@ -2108,7 +2158,7 @@
 </tr>
 </tbody>
 </table>
-<p><a href="http://getbootstrap.com/javascript/#tabs">Bootstrap tabs documentation</a></p>
+<p><a href="http://v4-alpha.getbootstrap.com/javascript/#tabs">Bootstrap tabs documentation</a></p>
 <hr>
 <h3 id="tooltip">Tooltip</h3>
 <pre><code>[tooltip title=&quot;I&#39;m the title&quot; placement=&quot;right&quot;] ... [/tooltip]
@@ -2154,7 +2204,7 @@
 </tr>
 </tbody>
 </table>
-<p><a href="http://getbootstrap.com/javascript/#tooltips">Bootstrap tooltip documentation</a></p>
+<p><a href="http://v4-alpha.getbootstrap.com/javascript/#tooltips">Bootstrap tooltip documentation</a></p>
 <hr>
 <h3 id="popover">Popover</h3>
 <pre><code>[popover title=&quot;I&#39;m the title&quot; text=&quot;And here&#39;s some amazing content. It&#39;s very engaging. right?&quot; placement=&quot;right&quot;] ... [/popover]
@@ -2207,7 +2257,7 @@
 </tr>
 </tbody>
 </table>
-<p><a href="http://getbootstrap.com/javascript/#popovers">Bootstrap popover documentation</a></p>
+<p><a href="http://v4-alpha.getbootstrap.com/javascript/#popovers">Bootstrap popover documentation</a></p>
 <hr>
 <h3 id="collapse">Collapse</h3>
 <h4 id="single-collapse">Single Collapse</h4>
@@ -2268,7 +2318,7 @@
 <tbody>
 <tr>
 <td>title</td>
-<td>The title of the collapsible, visible when collapsed</td>
+<td>The title of the collapsible item, visible when collapsed</td>
 <td>required</td>
 <td>any text</td>
 <td>false</td>
@@ -2303,11 +2353,14 @@
 </tr>
 </tbody>
 </table>
-<p><a href="http://getbootstrap.com/javascript/#collapse">Bootstrap collapse documentation</a></p>
+<p><a href="http://v4-alpha.getbootstrap.com/javascript/#collapse">Bootstrap collapse documentation</a></p>
 <hr>
 <h3 id="carousel">Carousel</h3>
 <pre><code>[carousel]
-    [carousel-item active=&quot;true&quot;] ... [/carousel-item]
+    [carousel-item active=&quot;true&quot;]
+     ...
+        [carousel-caption]...[/carousel-caption]
+    [/carousel-item]
     [carousel-item] ... [/carousel-item]
     [carousel-item] ... [/carousel-item]
 [/carousel]
@@ -2396,7 +2449,36 @@
 </tr>
 </tbody>
 </table>
-<p><a href="http://getbootstrap.com/javascript/#carousel">Bootstrap carousel documentation</a></p>
+<p><a href="http://v4-alpha.getbootstrap.com/javascript/#carousel">Bootstrap carousel documentation</a></p>
+<h4 id="-carousel-caption-parameters">[carousel-caption] parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Required</th>
+<th>Values</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xclass</td>
+<td>Any extra classes you want to add</td>
+<td>optional</td>
+<td>any text</td>
+<td>none</td>
+</tr>
+<tr>
+<td>data</td>
+<td>Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at <a href="#button-dropdowns">Button Dropdowns</a>).</td>
+<td>optional</td>
+<td>any text</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<p><a href="http://v4-alpha.getbootstrap.com/javascript/#carousel">Bootstrap carousel documentation</a></p>
 <hr>
 <h3 id="modal">Modal</h3>
 <pre><code>[modal text=&quot;This is my modal&quot; title=&quot;Modal Title Goes Here&quot; xclass=&quot;btn btn-primary btn-lg&quot;]
@@ -2482,6 +2564,6 @@
 </tr>
 </tbody>
 </table>
-<p><a href="http://getbootstrap.com/javascript/#modals">Bootstrap modal documentation</a></p>
+<p><a href="http://v4-alpha.getbootstrap.com/javascript/#modals">Bootstrap modal documentation</a></p>
 <hr>
 

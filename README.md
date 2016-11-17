@@ -10,7 +10,7 @@ WordPress plugin that provides shortcodes for easier use of the Bootstrap styles
 ## Requirements
 ![Tested in WordPress](https://img.shields.io/wordpress/v/bootstrap-4-shortcodes.svg) ![PHP 5.3+](https://img.shields.io/badge/PHP-5.3%2B-blue.svg) ![Bootstrap](https://img.shields.io/badge/Bootstrap-4.x-6f5499.svg)
 
-This plugin won't do anything if you don't have WordPress theme built with the [Bootstrap](http://getbootstrap.com/) framework. **This plugin does not include the Bootstrap framework**.
+This plugin won't do anything if you don't have WordPress theme built with the [Bootstrap](http://v4-alpha.getbootstrap.com/) framework. **This plugin does not include the Bootstrap framework**.
 
 The plugin is tested to work with ```Bootstrap 4``` and ```WordPress 4.6.1``` and **requires PHP 5.3 or later**.
 
@@ -18,45 +18,43 @@ The plugin is tested to work with ```Bootstrap 4``` and ```WordPress 4.6.1``` an
 
 ### CSS
 * [Grid](#grid)
-* [Lead body copy](#lead-body-copy)
-* [Emphasis classes](#emphasis-classes)
-* [Code](#code)
-* [Tables](#tables)
-* [Buttons](#buttons)
-* [Images](#images)
-* [Responsive Embeds](#responsive-embeds)
+* [Media Objects](#media-objects)
 * [Responsive utilities](#responsive-utilities)
 
-### Components
-* [Icons](#icons)
-* [Button Groups](#button-groups)
-* [Button Dropdowns](#button-dropdowns)
-* [Cards](#cards)
-* [Navs](#navs)
-* [Breadcrumbs](#breadcrumbs)
-* [Labels](#labels)
-* [Badges](#badges)
-* [Jumbotron](#jumbotron)
-* [Page Header](#page-header)
-* [Thumbnails](#thumbnails)
-* [Alerts](#alerts)
-* [Progress Bars](#progress-bars)
-* [Media Objects](#media-objects)
-* [List Groups](#list-groups)
-* [Panels](#panels)
+### Content
+* [Lead](#lead)
+* [Emphasis classes](#emphasis-classes)
+* [Code](#code)
+* [Images](#images)
+* [Tables](#tables)
+* [Figures](#figures)
 
-### JavaScript
-* [Tabs](#tabs)
-* [Tooltip](#tooltip)
-* [Popover](#popover)
-* [Collapse](#collapse)
+### Components
+* [Alerts](#alerts)
+* [Breadcrumbs](#breadcrumbs)
+* [Buttons](#buttons)
+* [Button Groups](#button-groups)
+* [Cards](#cards)
 * [Carousel](#carousel)
+* [Collapse](#collapse)
+* [Dropdowns](#dropdowns)
+* [Jumbotron](#jumbotron)
+* [List Groups](#list-groups)
 * [Modal](#modal)
+* [Navs](#navs)
+* [Popover](#popover)
+* [Progress](#progress)
+* [Tag](#tag)
+* [Tooltip](#tooltip)
+
+### Utilities
+* [Close Icon](#close-icon)
+* [Responsive Embeds](#responsive-embeds)
 
 
 # Usage
 
-### CSS
+### Layout
 
 ### Grid
 	[row]
@@ -95,6 +93,8 @@ The container-fluid component is supported as a discrete shortcode for cases whe
 			[/row]
 		[/container]
 	[/container-fluid]
+	
+If your Bootstrap has flexbox support enabled, you can get some more alignment options on rows and columns - [Bootstrap flexbox documentation](http://v4-alpha.getbootstrap.com/layout/flexbox-grid/).
 
 #### [container] parameters
 Parameter | Description | Required | Values | Default
@@ -112,36 +112,117 @@ data | Data attribute and value pairs separated by a comma. Pairs separated by p
 #### [row] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
+flex-valign-xs | (only if flexbox is enabled) Vertical aligment for columns on extra small screens (less than 576px) | optional | top,middle,bottom | none
+flex-valign-sm | (only if flexbox is enabled) Vertical aligment for columns on small screens (greater than 576px) | optional | top,middle,bottom | none
+flex-valign-md | (only if flexbox is enabled) Vertical aligment for columns on medium screens (greater than 768px) | optional | top,middle,bottom | none
+flex-valign-lg | (only if flexbox is enabled) Vertical aligment for columns on large screens (greater than 992px) | optional | top,middle,bottom | none
+flex-valign-xs | (only if flexbox is enabled) Vertical aligment for columns on extra large screens (greater than 1200px) | optional | top,middle,bottom | none
+flex-halign-xs | (only if flexbox is enabled) Horizontal aligment for columns on extra small screens (less than 576px) | optional | left,center,right,around,between | none
+flex-halign-sm | (only if flexbox is enabled) Horizontal aligment for columns on small screens (greater than 576px) | optional | left,center,right,around,between | none
+flex-halign-md | (only if flexbox is enabled) Horizontal aligment for columns on medium screens (greater than 768px) | optional | left,center,right,around,between | none
+flex-halign-lg | (only if flexbox is enabled) Horizontal aligment for columns on large screens (greater than 992px) | optional | left,center,right,around,between | none
+flex-halign-xs | (only if flexbox is enabled) Horizontal aligment for columns on extra large screens (greater than 1200px) | optional | left,center,right,around,between | none
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
 #### [column] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
-xs | Size of column on extra small screens (less than 768px) | optional | 1-12 | false
-sm | Size of column on small screens (greater than 768px) | optional | 1-12 | false
-md | Size of column on medium screens (greater than 992px) | optional | 1-12 | false
-lg | Size of column on large screens (greater than 1200px) | optional | 1-12 | false
+xs | Size of column on extra small screens (less than 576px) | optional | 1-12 | false
+sm | Size of column on small screens (greater than 576px) | optional | 1-12 | false
+md | Size of column on medium screens (greater than 768px) | optional | 1-12 | false
+lg | Size of column on large screens (greater than 992px) | optional | 1-12 | false
+xl | Size of column on extra large screens (greater than 1200px) | optional | 1-12 | false
 offset_xs | Offset on extra small screens | optional | 1-12 | false
 offset_sm | Offset on small screens | optional | 1-12 | false
 offset_md | Offset on column on medium screens | optional | 1-12 | false
 offset_lg | Offset on column on large screens | optional | 1-12 | false
+offset_xl | Offset on column on extra large screens | optional | 1-12 | false
 pull_xs | Pull on extra small screens | optional | 1-12 | false
 pull_sm | Pull on small screens | optional | 1-12 | false
 pull_md | Pull on column on medium screens | optional | 1-12 | false
 pull_lg | Pull on column on large screens | optional | 1-12 | false
+pull_xl | Pull on column on extra large screens | optional | 1-12 | false
 push_xs | Push on extra small screens | optional | 1-12 | false
 push_sm | Push on small screens | optional | 1-12 | false
 push_md | Push on column on medium screens | optional | 1-12 | false
 push_lg | Push on column on large screens | optional | 1-12 | false
+push_xl | Push on column on extra large screens | optional | 1-12 | false
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
-[Bootstrap grid documentation](http://getbootstrap.com/css/#grid).
+[Bootstrap grid documentation](http://v4-alpha.getbootstrap.com/layout/grid/).
 
 * * *
 
-### Lead body copy
+### Media Objects
+    [media-list]
+        [media]
+            [media-object media="left"]
+                ...
+            [/media-object]
+            [media-body title="Testing"]
+                ...
+            [/media-body]
+        [/media]
+    [/media-list]
+
+media-list is entirely optional and should contain only media elements.
+
+#### [media-list] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+#### [media] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+#### [media-object] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+halign | Whether the image pulls to the left or right | optional | left, right | left
+valign | Whether the body is vertically aligned to top, middle or bottom | optional | top, middle, bottom | top
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+#### [media-body] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+title | The object title | required | Any text | none
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+__NOTE: media-object should contain an image, or linked image, inserted using the WordPress TinyMCE editor__
+
+[Bootstrap media objects documentation](http://v4-alpha.getbootstrap.com/layout/media-object/)
+
+* * *
+
+### Responsive Utilities
+	[responsive block="lg md" hidden="sm xs"] ... [/responsive]
+
+#### [reponsive] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+visible | Sizes at which this element is visible (separated by spaces) **NOTE: as of Bootstrap 3.2 "visible" is deprecated in favor of "block", "inline", and "inline-block" (see below)** | optional | xs, sm, md, lg  | false
+hidden | Sizes at which this element is hidden (separated by spaces) | optional | xs, sm, md, lg  | false
+block | Sizes at which this element is visible and displayed as a "block" element (separated by spaces) | optional | xs, sm, md, lg  | false
+inline | Sizes at which this element is visible and displayed as an "inline" element (separated by spaces) | optional | xs, sm, md, lg  | false
+inline_block | Sizes at which this element is visible and displayed as an "inline-block" element (separated by spaces) | optional | xs, sm, md, lg  | false
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap responsive utilities documentation](http://v4-alpha.getbootstrap.com/layout/responsive-utilities/)
+
+* * *
+
+### Components
+
+### Lead
 	[lead] ... [/lead]
 
 #### [lead] parameters
@@ -150,7 +231,7 @@ Parameter | Description | Required | Values | Default
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
-[Bootstrap body copy documentation](http://getbootstrap.com/css/#type-body-copy)
+[Bootstrap lead documentation](http://v4-alpha.getbootstrap.com/content/typography/#lead)
 
 * * *
 
@@ -164,7 +245,7 @@ type | The type of label to display | required | muted, primary, success, info, 
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
-[Bootstrap emphasis classes documentation](http://getbootstrap.com/css/#type-emphasis)
+[Bootstrap emphasis classes documentation](http://v4-alpha.getbootstrap.com/content/typography/)
 
 * * *
 
@@ -179,7 +260,23 @@ scrollable | Set a max height of 350px and provide a scroll bar. Not usable with
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
-[Bootstrap code documentation](http://getbootstrap.com/css/#code)
+[Bootstrap code documentation](http://v4-alpha.getbootstrap.com/content/code/)
+
+* * *
+
+### Images
+	[img type="circle" fluid="true"] ... [/img]
+
+Wrap any number of HTML image tags or images inserted via the WordPress media manager.
+#### [img] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+type | The effect to apply to wrapped images | optional | rounded, circle, thumbnail | false
+fluid | Make the wrapped images responsive | optional | true, false | false
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap images documentation](http://v4-alpha.getbootstrap.com/css/#images)
 
 * * *
 
@@ -201,7 +298,7 @@ responsive | Wrap the table in a div with the class "table-respsonve" (see Boots
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
-[Bootstrap table documentation](http://getbootstrap.com/css/#tables)
+[Bootstrap table documentation](http://v4-alpha.getbootstrap.com/css/#tables)
 
 * * *
 
@@ -222,25 +319,10 @@ link | The url you want the button to link to | optional | any valid link | none
 target | Target for the link | optional | any valid target | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
-[Bootstrap button documentation](http://getbootstrap.com/css/#buttons)
+[Bootstrap button documentation](http://v4-alpha.getbootstrap.com/css/#buttons)
 
 * * *
 
-### Images
-	[img type="circle" responsive="true"] ... [/img]
-
-Wrap any number of HTML image tags or images inserted via the WordPress media manager.
-#### [img] parameters
-Parameter | Description | Required | Values | Default
---- | --- | --- | --- | ---
-type | The effect to apply to wrapped images | optional | rounded, circle, thumbnail | false
-responsive | Make the wrapped images responsive | optional | true, false | false
-xclass | Any extra classes you want to add | optional | any text | none
-data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
-
-[Bootstrap images documentation](http://getbootstrap.com/css/#images)
-
-* * *
 
 ### Responsive Embeds
 	[embed-responsive ratio="16by9"] ... [/embed-responsive]
@@ -253,25 +335,7 @@ ratio | Maintain the aspect ratio of the embed | optional | 16by9, 4by3 | false
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
-[Bootstrap responsive embed documentation](http://getbootstrap.com/components/#responsive-embed)
-
-* * *
-
-### Responsive Utilities
-	[responsive block="lg md" hidden="sn xs"] ... [/responsive]
-
-#### [reponsive] parameters
-Parameter | Description | Required | Values | Default
---- | --- | --- | --- | ---
-visible | Sizes at which this element is visible (separated by spaces) **NOTE: as of Bootstrap 3.2 "visible" is deprecated in favor of "block", "inline", and "inline-block" (see below)** | optional | xs, sm, md, lg  | false
-hidden | Sizes at which this element is hidden (separated by spaces) | optional | xs, sm, md, lg  | false
-block | Sizes at which this element is visible and displayed as a "block" element (separated by spaces) | optional | xs, sm, md, lg  | false
-inline | Sizes at which this element is visible and displayed as an "inline" element (separated by spaces) | optional | xs, sm, md, lg  | false
-inline_block | Sizes at which this element is visible and displayed as an "inline-block" element (separated by spaces) | optional | xs, sm, md, lg  | false
-xclass | Any extra classes you want to add | optional | any text | none
-data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
-
-[Bootstrap responsive utilities documentation](http://getbootstrap.com/css/#responsive-utilities)
+[Bootstrap responsive embed documentation](http://v4-alpha.getbootstrap.com/components/#responsive-embed)
 
 * * *
 
@@ -287,7 +351,7 @@ type | The type of icon you want to display | required | See Bootstrap docs | no
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
-[Bootstrap Glyphicons documentation](http://getbootstrap.com/components/#glyphicons)
+[Bootstrap Glyphicons documentation](http://v4-alpha.getbootstrap.com/components/#glyphicons)
 
 * * *
 
@@ -332,7 +396,7 @@ Parameter | Description | Required | Values | Default
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
-[Bootstrap button groups documentation](http://getbootstrap.com/css/#btn-groups)
+[Bootstrap button groups documentation](http://v4-alpha.getbootstrap.com/css/#btn-groups)
 
 * * *
 
@@ -406,7 +470,7 @@ Parameter | Description | Required | Values | Default
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
-[Bootstrap button dropdowns documentation](http://getbootstrap.com/components/#btn-dropdowns)
+[Bootstrap button dropdowns documentation](http://v4-alpha.getbootstrap.com/components/#btn-dropdowns)
 
 * * *
 
@@ -446,7 +510,7 @@ disabled | Whether the item is disabled | optional | true, false | false
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
-[Bootstrap button navs documentation](http://getbootstrap.com/components/#nav)
+[Bootstrap button navs documentation](http://v4-alpha.getbootstrap.com/components/#nav)
 
 * * *
 
@@ -470,7 +534,7 @@ link | The url you want the breadcrumb-item to link to | optional | any valid li
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
-[Bootstrap breadcrumbs documentation](http://getbootstrap.com/components/#breadcrumbs)
+[Bootstrap breadcrumbs documentation](http://v4-alpha.getbootstrap.com/components/#breadcrumbs)
 
 * * *
 
@@ -484,7 +548,7 @@ type | The type of label to display | optional | default, primary, success, info
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
-[Bootstrap label documentation](http://getbootstrap.com/components/#labels)
+[Bootstrap label documentation](http://v4-alpha.getbootstrap.com/components/#labels)
 
 * * *
 
@@ -498,7 +562,7 @@ right | Whether the badge should align to the right of its container | optional 
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
-[Bootstrap badges documentation](http://getbootstrap.com/components/#badges)
+[Bootstrap badges documentation](http://v4-alpha.getbootstrap.com/components/#badges)
 
 * * *
 
@@ -512,7 +576,7 @@ title | The jumbotron title | optional | Any text | none
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
-[Bootstrap jumbotron documentation](http://getbootstrap.com/components/#jumbotron)
+[Bootstrap jumbotron documentation](http://v4-alpha.getbootstrap.com/components/#jumbotron)
 
 * * *
 
@@ -526,23 +590,7 @@ Parameter | Description | Required | Values | Default
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
-[Bootstrap page-header documentation](http://getbootstrap.com/components/#page-header)
-
-* * *
-
-### Thumbnails
-	[thumbnail] ... [/thumbnail]
-	[thumbnail] ... [/thumbnail]
-	[thumbnail] ... [/thumbnail]
-
-#### [thumbnail] parameters
-Parameter | Description | Required | Values | Default
---- | --- | --- | --- | ---
-has_content | Set to "true" if this thumbnail contains more than just an image or linked image as in [Bootstrap's thumbnail documentation](http://getbootstrap.com/components/#thumbnails-custom-content). | optional | true, false | false
-xclass | Any extra classes you want to add | optional | any text | none
-data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
-
-[Bootstrap thumbnails documentation](http://getbootstrap.com/components/#thumbnails)
+[Bootstrap page-header documentation](http://v4-alpha.getbootstrap.com/components/#page-header)
 
 * * *
 
@@ -557,7 +605,7 @@ dismissable | If the alert should be dismissable | optional | true, false | fals
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
-[Bootstrap alert documentation](http://getbootstrap.com/components/#alerts)
+[Bootstrap alert documentation](http://v4-alpha.getbootstrap.com/components/#alerts)
 
 * * *
 
@@ -584,44 +632,7 @@ type | The type of the progress bar | optional | default, primary, success, info
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
-[Bootstrap progress bars documentation](http://getbootstrap.com/components/#progress)
-
-* * *
-
-### Media Objects
-	[media]
-		[media-object media="left"]
-			...
-		[/media-object]
-		[media-body title="Testing"]
-			...
-		[/media-body]
-	[/media]
-
-#### [media] parameters
-Parameter | Description | Required | Values | Default
---- | --- | --- | --- | ---
-xclass | Any extra classes you want to add | optional | any text | none
-data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
-
-#### [media-object] parameters
-Parameter | Description | Required | Values | Default
---- | --- | --- | --- | ---
-media | Whether the image pulls to the left or right | optional | left, right | right
-pull | Whether the image pulls to the left or right *Deprecated, use only if your theme uses Bootstrap 3.2 or earlier* | optional | left, right | right
-xclass | Any extra classes you want to add | optional | any text | none
-data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
-
-#### [media-body] parameters
-Parameter | Description | Required | Values | Default
---- | --- | --- | --- | ---
-title | The object title | required | Any text | none
-xclass | Any extra classes you want to add | optional | any text | none
-data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
-
-__NOTE: media-object should contain an image, or linked image, inserted using the WordPress TinyMCE editor__
-
-[Bootstrap media objects documentation](http://getbootstrap.com/components/#media)
+[Bootstrap progress bars documentation](http://v4-alpha.getbootstrap.com/components/#progress)
 
 * * *
 
@@ -698,38 +709,24 @@ Parameter | Description | Required | Values | Default
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
-[Bootstrap list groups documentation](http://getbootstrap.com/components/#list-group)
+[Bootstrap list groups documentation](http://v4-alpha.getbootstrap.com/components/#list-group)
 
 * * *
 
-### Panels
-	[panel type="info" heading="Panel Title" footer="Footer text"] ... [/panel]
+### Cards
+	[card type="info" heading="Card Title" footer="Footer text"] ... [/card]
 
-#### [panel] parameters
+#### [card] parameters
 Parameter | Description | Required | Values | Default
 --- | --- | --- | --- | ---
-type | The type of the panel | optional | default, primary, success, info, warning, danger, link | default
-heading | The panel heading | optional | any text | none
-title | Whether the panel heading should have a title tag around it | optional | true, false | false
-footer | The panel footer text if desired | optional | any text | none
+type | The type of the card | optional | default, primary, success, info, warning, danger, link | default
+heading | The card heading | optional | any text | none
+title | Whether the card heading should have a title tag around it | optional | true, false | false
+footer | The card footer text if desired | optional | any text | none
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
-[Bootstrap panels documentation](http://getbootstrap.com/components/#panels)
-
-* * *
-
-### Wells
-	[well size="sm"] ... [/well]
-
-#### [well] parameters
-Parameter | Description | Required | Values | Default
---- | --- | --- | --- | ---
-size | Modifies the amount of padding inside the well | optional | sm, lg | normal
-xclass | Any extra classes you want to add | optional | any text | none
-data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
-
-[Bootstrap wells documentation](http://getbootstrap.com/components/#wells)
+[Bootstrap card documentation](http://v4-alpha.getbootstrap.com/components/#card)
 
 * * *
 
@@ -764,7 +761,7 @@ fade | Whether to use the "fade" effect when showing this tab | optional | true,
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
-[Bootstrap tabs documentation](http://getbootstrap.com/javascript/#tabs)
+[Bootstrap tabs documentation](http://v4-alpha.getbootstrap.com/javascript/#tabs)
 
 * * *
 
@@ -779,7 +776,7 @@ placement | The placement of the tooltip | optional | left, top, bottom, right |
 animation | apply a CSS fade transition to the tooltip | optional | any text | none
 html | Insert HTML into the tooltip | optional | true, false | false
 
-[Bootstrap tooltip documentation](http://getbootstrap.com/javascript/#tooltips)
+[Bootstrap tooltip documentation](http://v4-alpha.getbootstrap.com/javascript/#tooltips)
 
 * * *
 
@@ -795,7 +792,7 @@ placement | The placement of the popover | optional | left, top, bottom, right |
 animation | apply a CSS fade transition to the tooltip | optional | any text | none
 html | Insert HTML into the tooltip | optional | true, false | false
 
-[Bootstrap popover documentation](http://getbootstrap.com/javascript/#popovers)
+[Bootstrap popover documentation](http://v4-alpha.getbootstrap.com/javascript/#popovers)
 
 * * *
 
@@ -834,13 +831,16 @@ active | Whether the tab is expanded at load time | optional | true, false | fal
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
-[Bootstrap collapse documentation](http://getbootstrap.com/javascript/#collapse)
+[Bootstrap collapse documentation](http://v4-alpha.getbootstrap.com/javascript/#collapse)
 
 * * *
 
 ### Carousel
 	[carousel]
-		[carousel-item active="true"] ... [/carousel-item]
+		[carousel-item active="true"]
+		 ...
+		    [carousel-caption]...[/carousel-caption]
+		[/carousel-item]
 		[carousel-item] ... [/carousel-item]
 		[carousel-item] ... [/carousel-item]
 	[/carousel]
@@ -862,7 +862,15 @@ caption | This carousel slide's caption | optional | Any text | none
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
-[Bootstrap carousel documentation](http://getbootstrap.com/javascript/#carousel)
+[Bootstrap carousel documentation](http://v4-alpha.getbootstrap.com/javascript/#carousel)
+
+#### [carousel-caption] parameters
+Parameter | Description | Required | Values | Default
+--- | --- | --- | --- | ---
+xclass | Any extra classes you want to add | optional | any text | none
+data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
+
+[Bootstrap carousel documentation](http://v4-alpha.getbootstrap.com/javascript/#carousel)
 
 * * *
 
@@ -889,6 +897,6 @@ Parameter | Description | Required | Values | Default
 xclass | Any extra classes you want to add | optional | any text | none
 data | Data attribute and value pairs separated by a comma. Pairs separated by pipe (see example at [Button Dropdowns](#button-dropdowns)). | optional | any text | none
 
-[Bootstrap modal documentation](http://getbootstrap.com/javascript/#modals)
+[Bootstrap modal documentation](http://v4-alpha.getbootstrap.com/javascript/#modals)
 
 * * *
