@@ -1,5 +1,5 @@
 {
-  "name": "ciromattia/bootstrap-4-shortcodes",
+  "name": "rangitm/bootstrap-4-shortcodes",
   "description": "WordPress shortcodes for easier use of Bootstrap elements in your content.",
   "keywords": [
     "bootstrap",
@@ -7,7 +7,7 @@
     "wordpress",
     "plugin"
   ],
-  "homepage": "https://github.com/ciromattia/bootstrap-4-shortcodes",
+  "homepage": "https://github.com/rangitm/bootstrap-4-shortcodes",
   "license": "GPL2",
   "authors": [
     {
