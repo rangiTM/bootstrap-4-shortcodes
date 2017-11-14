@@ -1,4 +1,4 @@
-Bootstrap 4 Shortcodes for WordPress
+Bootstrap 4.0.0-beta Shortcodes for WordPress
 ===
 
 ![WordPress Rating](https://img.shields.io/wordpress/plugin/r/bootstrap-4-shortcodes.svg) ![WordPress Downloads](https://img.shields.io/wordpress/plugin/dt/bootstrap-4-shortcodes.svg)
@@ -10,7 +10,7 @@ WordPress plugin that provides shortcodes for easier use of the Bootstrap styles
 ## Requirements
 ![Tested in WordPress](https://img.shields.io/wordpress/v/bootstrap-4-shortcodes.svg) ![PHP 5.3+](https://img.shields.io/badge/PHP-5.3%2B-blue.svg) ![Bootstrap](https://img.shields.io/badge/Bootstrap-4.x-6f5499.svg)
 
-This plugin won't do anything if you don't have WordPress theme built with the [Bootstrap](http://v4-alpha.getbootstrap.com/) framework. **This plugin does not include the Bootstrap framework**.
+This plugin won't do anything if you don't have WordPress theme built with the [Bootstrap](http://getbootstrap.com/) framework. **This plugin does not include the Bootstrap framework**.
 
 The plugin is tested to work with ```Bootstrap 4``` and ```WordPress 4.6.1``` and **requires PHP 5.3 or later**.
 
